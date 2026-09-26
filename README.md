@@ -1,18 +1,14 @@
-```markdown
-
-\# Report Viewer
-
 
 
 📄 \*\*Report Viewer\*\* is a full-stack, AI-powered web application designed to upload, analyze, and review document reports with an interactive AI chat interface.
 
 
 
-\---
 
 
 
-\## 🌟 Features
+
+🌟 Features
 
 
 
@@ -28,11 +24,11 @@
 
 
 
-\---
 
 
 
-\## 🛠️ Tech Stack
+
+🛠️ Tech Stack
 
 
 
@@ -44,19 +40,19 @@
 
 
 
-\---
 
 
 
-\## 🚀 Quick Start
+
+🚀 Quick Start
 
 
 
-\### Local Development
+&#x20;Local Development
 
 
 
-\#### 1. Backend Setup
+1\. Backend Setup
 
 
 
@@ -106,11 +102,11 @@ uvicorn app.main:app --reload
 
 
 
-\---
 
 
 
-\#### 2. Frontend Setup
+
+2\. Frontend Setup
 
 
 
@@ -136,7 +132,7 @@ npm run dev
 
 
 
-```
+
 
 
 
@@ -144,15 +140,15 @@ npm run dev
 
 
 
-\---
 
 
 
-\## 📦 Deployment Options
+
+&#x20;📦 Deployment Options
 
 
 
-\### Option 1: Deploy to Render (Recommended - Free)
+&#x20;Option 1: Deploy to Render (Recommended - Free)
 
 
 
@@ -192,15 +188,15 @@ npm run dev
 
 
 
-\---
 
 
 
-\## 🔧 API Endpoints
+
+🔧 API Endpoints
 
 
 
-\### Health \& Auth
+Health \& Auth
 
 
 
@@ -210,7 +206,7 @@ npm run dev
 
 
 
-\### Reports \& Review
+Reports \& Review
 
 
 
@@ -228,7 +224,7 @@ npm run dev
 
 
 
-\## 🔒 Security Features
+🔒 Security Features
 
 
 
@@ -242,11 +238,11 @@ npm run dev
 
 
 
-\---
 
 
 
-\## 📊 Project Structure
+
+📊 Project Structure
 
 
 
@@ -290,15 +286,9 @@ Report\_Viewer/
 
 
 
-```
 
 
-
-\---
-
-
-
-\## 🤝 Contributing
+🤝 Contributing
 
 
 
@@ -306,11 +296,11 @@ Contributions, issues, and feature requests are welcome!
 
 
 
-\---
 
 
 
-\## 📝 License
+
+📝 License
 
 
 
@@ -318,11 +308,11 @@ MIT License - Use freely for personal and educational projects.
 
 
 
-\---
 
 
 
-\## 📧 Support
+
+📧 Support
 
 
 
@@ -333,10 +323,4 @@ For issues or questions, feel free to open an issue in the repository.
 Made with ❤️ by \*\*Pranav Mule\*\* | Report Viewer v1.0.0
 
 
-
-```
-
-
-
-```
 
