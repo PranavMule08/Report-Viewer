@@ -1,0 +1,45 @@
+[project]
+name = "AI-Powered Project Report Reviewer and Improvement Assistant Using Generative AI"
+version = "1.0.0"
+description = "An intelligent AI-powered system that reviews academic/project reports, identifies problems, provides suggestions, and helps improve the report using Generative AI."
+
+[database]
+provider = "SQLite"
+filename = "reports.db"
+
+[backend]
+framework = "FastAPI"
+python_version = "3.9+"
+port = 8000
+
+[frontend]
+framework = "React 18 + Vite"
+javascript_version = "ES2020+"
+port = 3000
+
+[ai]
+provider = "OpenAI (GPT-4/GPT-3.5) or compatible API"
+api_key_env = "OPENAI_API_KEY"
+
+[features]
+- User authentication (register, login, logout, JWT)
+- File upload (PDF, DOCX, TXT)
+- Text extraction from documents
+- AI-powered report review and analysis
+- Overall and section-wise scoring
+- Issue detection with severity levels
+- AI improvement assistant
+- Report-specific AI chat
+- Review history
+- Report export/download
+
+[security]
+- Password hashing (bcrypt)
+- JWT authentication
+- Input validation
+- File validation
+- Authorization (users can only access their own reports)
+
+[demo_mode]
+enabled = true
+description = "When AI API key is not available, the application runs in demo mode with simulated AI responses for testing/development purposes."

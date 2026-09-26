@@ -1,0 +1,13 @@
+AI-Powered Project Report
+
+Abstract
+This project presents a study of machine learning applications in education. The system was designed and implemented to help students.
+
+Introduction
+Education is important. Machine learning is a technology that can help. This project will show how ML helps students learn better. The problem is that students need personalized learning. The objective is to build a system that recommends content.
+
+Methodology
+We used a dataset of student records. The model was trained using supervised learning. We evaluated accuracy on a test set.
+
+Conclusion
+The project was successful. Future work can add more features.
