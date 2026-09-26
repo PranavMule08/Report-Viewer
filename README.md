@@ -1,8 +1,8 @@
+Report Viewer - Advanced Report Viewing \& Analysis Platform
 
 
-📄 \*\*Report Viewer\*\* is a full-stack, AI-powered web application designed to upload, analyze, and review document reports with an interactive AI chat interface.
 
-
+📊 Report Viewer is a modern, web-based report viewing and analysis platform designed to make it easy to upload, view, analyze, and manage reports through a clean and interactive interface.
 
 
 
@@ -12,33 +12,27 @@
 
 
 
-\- \*\*Document Analysis\*\*: Upload report files (TXT, PDF, etc.) and generate automated AI summaries and structured reviews.
+\- Modern Report Viewer: Clean and responsive interface for viewing reports
 
-\- \*\*Interactive AI Chat\*\*: Ask questions and chat directly with your uploaded documents in real time.
+\- File Upload: Upload and process supported report files
 
-\- \*\*User Authentication\*\*: Complete user registration and login system with secure JWT session handling.
+\- Interactive Report Display: View report content in an organized format
 
-\- \*\*Dashboard \& History\*\*: Track, view, and manage all your past uploaded reports and AI-generated reviews in one place.
+\- Report Analysis: Extract and analyze important information from reports
 
-\- \*\*Dark/Light Theme\*\*: Sleek, modern UI with support for customized themes.
+\- Search \& Navigation: Quickly find required content within reports
 
+\- Responsive UI: Works smoothly across desktop and different screen sizes
 
+\- Dark/Light Theme: Toggle between themes based on preference
 
+\- Report History: Keep track of previously uploaded and viewed reports
 
+\- Download Reports: Download processed or generated reports
 
+\- Error Handling: Clear messages for invalid files and processing errors
 
-
-🛠️ Tech Stack
-
-
-
-\- \*\*Frontend\*\*: React (Vite), JavaScript, CSS3, React Router
-
-\- \*\*Backend\*\*: Python 3.13, FastAPI, SQLite / SQLAlchemy
-
-\- \*\*AI Integration\*\*: Custom AI Service for document processing and conversational QA
-
-
+\- Production Ready: Deployable to free hosting platforms
 
 
 
@@ -48,145 +42,283 @@
 
 
 
-&#x20;Local Development
+Local Development
 
 
 
-1\. Backend Setup
+Backend Setup
 
 
 
-```bash
-
-cd report\_reviewer/backend
-
-
-
-\# Create virtual environment
+cd backend
 
 python -m venv venv
 
 
 
-\# Activate virtual environment
-
-\# On Windows:
+Windows:
 
 venv\\Scripts\\activate
 
-\# On Mac/Linux:
+
+
+Mac/Linux:
 
 source venv/bin/activate
 
 
 
-\# Install dependencies
-
 pip install -r requirements.txt
 
+python main.py
 
 
-\# Start backend server
 
-uvicorn app.main:app --reload
+Backend runs at:
 
+http://localhost:8000
 
 
-```
 
+API Docs:
 
+http://localhost:8000/docs
 
-\* \*\*Backend runs at\*\*: `http://localhost:8000`
 
-\* \*\*API Docs\*\*: `http://localhost:8000/docs`
 
 
 
+Frontend Setup
 
 
 
+cd frontend
 
-2\. Frontend Setup
 
 
+Serve with Python:
 
-Open a new terminal tab or window:
+python -m http.server 3000
 
 
 
-```bash
+Or use Node.js http-server:
 
-cd report\_reviewer/frontend
+npx http-server -p 3000
 
 
 
-\# Install dependencies
+Frontend runs at:
 
-npm install
+http://localhost:3000
 
 
 
-\# Start development server
 
-npm run dev
 
+📦 Deployment Options
 
 
 
+Option 1: Deploy to Render (Recommended - Free)
 
 
 
-\* \*\*Frontend runs at\*\*: `http://localhost:5173`
+1\. Fork or push this project to your own GitHub repository.
 
 
 
+git init
 
+git add .
 
+git commit -m "Initial commit"
 
+git push origin main
 
-&#x20;📦 Deployment Options
 
 
+2\. Create a Render Account:
 
-&#x20;Option 1: Deploy to Render (Recommended - Free)
+https://render.com
 
 
 
-1\. Push your repository to GitHub.
+3\. Deploy Backend:
 
-2\. Go to \[https://render.com](https://render.com?utm\_source=gemini) and create an account.
 
-3\. \*\*Deploy Backend\*\*:
 
-\* Click \*\*New +\*\* → \*\*Web Service\*\*
+\- Click New + → Web Service
 
-\* Connect your GitHub repository
+\- Connect your GitHub repository
 
-\* \*\*Root Directory\*\*: `report\_reviewer/backend`
+\- Build Command:
 
-\* \*\*Build Command\*\*: `pip install -r requirements.txt`
 
-\* \*\*Start Command\*\*: `uvicorn app.main:app --host 0.0.0.0 --port $PORT`
 
+pip install -r backend/requirements.txt
 
 
 
+\- Start Command:
 
-4\. \*\*Deploy Frontend\*\*:
 
-\* Click \*\*New +\*\* → \*\*Static Site\*\*
 
-\* \*\*Root Directory\*\*: `report\_reviewer/frontend`
+cd backend \&\& uvicorn main:app --host 0.0.0.0 --port $PORT
 
-\* \*\*Build Command\*\*: `npm run build`
 
-\* \*\*Publish Directory\*\*: `dist`
 
+\- Environment:
 
+&#x20; DEBUG=False
 
 
 
+\- Configure the frontend URL in ALLOWED\_ORIGINS.
 
+
+
+4\. Deploy Frontend:
+
+
+
+\- Click New + → Static Site
+
+\- Connect your GitHub repository
+
+\- Publish directory:
+
+
+
+frontend
+
+
+
+\- Update frontend/config.js with your backend URL.
+
+
+
+Example:
+
+
+
+window.RUNTIME\_CONFIG = {
+
+&#x20;   API\_URL: 'https://your-backend-name.onrender.com/api'
+
+};
+
+
+
+
+
+Option 2: Deploy to Railway
+
+
+
+1\. Go to:
+
+https://railway.app
+
+
+
+2\. Create a new project.
+
+
+
+3\. Select Deploy from GitHub.
+
+
+
+4\. Choose the backend folder.
+
+
+
+5\. Railway automatically detects the Python application.
+
+
+
+6\. Configure the required environment variables.
+
+
+
+7\. Deploy the frontend separately if required.
+
+
+
+
+
+Option 3: Deploy to PythonAnywhere
+
+
+
+1\. Go to:
+
+https://www.pythonanywhere.com
+
+
+
+2\. Upload the backend folder.
+
+
+
+3\. Configure the web application with FastAPI.
+
+
+
+4\. Install the required dependencies.
+
+
+
+5\. Configure the frontend API URL.
+
+
+
+6\. Enable HTTPS/SSL.
+
+
+
+
+
+Option 4: Docker Deployment
+
+
+
+Backend Dockerfile:
+
+
+
+FROM python:3.11-slim
+
+
+
+WORKDIR /app
+
+
+
+COPY requirements.txt .
+
+
+
+RUN pip install -r requirements.txt
+
+
+
+COPY . .
+
+
+
+CMD \["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+
+
+
+Build and run:
+
+
+
+docker build -t report-viewer .
+
+docker run -p 8000:8000 report-viewer
 
 
 
@@ -196,31 +328,173 @@ npm run dev
 
 
 
-Health \& Auth
+Health Check
 
 
 
-\* `POST /api/auth/register` — Register a new user
-
-\* `POST /api/auth/login` — Authenticate user and issue token
+GET /health
 
 
 
-Reports \& Review
+Checks whether the backend service is running correctly.
 
 
 
-\* `POST /api/upload` — Upload a new report document
 
-\* `GET /api/reports` — Fetch all uploaded reports
 
-\* `GET /api/reviews/{report\_id}` — Get AI review for a specific report
-
-\* `POST /api/chat` — Send query to AI regarding uploaded documents
+Upload Report
 
 
 
-\---
+POST /api/reports/upload
+
+
+
+Uploads a report for processing and viewing.
+
+
+
+Example:
+
+
+
+POST /api/reports/upload
+
+Content-Type: multipart/form-data
+
+
+
+
+
+Get Reports
+
+
+
+GET /api/reports
+
+
+
+Returns the list of available reports.
+
+
+
+
+
+View Report
+
+
+
+GET /api/reports/{report\_id}
+
+
+
+Retrieves the selected report and its information.
+
+
+
+
+
+Analyze Report
+
+
+
+POST /api/reports/{report\_id}/analyze
+
+
+
+Analyzes the uploaded report and returns extracted information.
+
+
+
+
+
+Search Report
+
+
+
+GET /api/reports/{report\_id}/search?query=example
+
+
+
+Searches for specific content inside a report.
+
+
+
+
+
+Delete Report
+
+
+
+DELETE /api/reports/{report\_id}
+
+
+
+Deletes a selected report from the system.
+
+
+
+
+
+Download Report
+
+
+
+GET /api/reports/{report\_id}/download
+
+
+
+Downloads the selected report.
+
+
+
+
+
+🎨 Customization
+
+
+
+Change API URL
+
+
+
+In frontend/config.js, update:
+
+
+
+window.RUNTIME\_CONFIG = {
+
+&#x20;   API\_URL: 'https://your-backend-url.com/api'
+
+};
+
+
+
+
+
+Change Theme Colors
+
+
+
+In frontend/styles.css, modify the CSS variables:
+
+
+
+:root {
+
+&#x20;   --primary-bg: #ffffff;
+
+&#x20;   --secondary-bg: #f5f5f5;
+
+&#x20;   --accent: #2563eb;
+
+&#x20;   --text-primary: #111827;
+
+&#x20;   --text-secondary: #6b7280;
+
+}
+
+
 
 
 
@@ -228,15 +502,25 @@ Reports \& Review
 
 
 
-\* Secure password hashing
+\- Input validation
 
-\* CORS protection configured between frontend and backend
+\- File type validation
 
-\* Untracked `.env` configuration for sensitive keys and DB connections
+\- File size restrictions
 
-\* File-upload sanitization
+\- Secure file processing
 
+\- CORS configuration
 
+\- Error handling
+
+\- Temporary file cleanup
+
+\- API request validation
+
+\- Protection against invalid file uploads
+
+\- No unnecessary access to the server file system
 
 
 
@@ -246,43 +530,129 @@ Reports \& Review
 
 
 
-```text
+Report-Viewer/
 
-Report\_Viewer/
+├── backend/
 
-└── report\_reviewer/
+│   ├── main.py
 
-&#x20;   ├── backend/
+│   ├── config.py
 
-&#x20;   │   ├── app/
+│   ├── requirements.txt
 
-&#x20;   │   │   ├── api/          # Route handlers (auth, reports, chat, upload)
+│   ├── services/
 
-&#x20;   │   │   ├── core/         # Config \& security settings
+│   ├── routes/
 
-&#x20;   │   │   ├── db/           # Database sessions \& models
+│   └── .env.example
 
-&#x20;   │   │   ├── models/       # Database schemas
+│
 
-&#x20;   │   │   └── services/     # AI service \& file extraction logic
+├── frontend/
 
-&#x20;   │   ├── main.py           # FastAPI entrypoint
+│   ├── index.html
 
-&#x20;   │   └── requirements.txt  # Python packages
+│   ├── styles.css
 
-&#x20;   └── frontend/
+│   ├── app.js
 
-&#x20;       ├── src/
+│   ├── config.js
 
-&#x20;       │   ├── context/      # AuthContext state management
+│   └── README.md
 
-&#x20;       │   ├── pages/        # Dashboard, Chat, ReportReview, Upload
+│
 
-&#x20;       │   └── services/     # API Axios client
+├── uploads/
 
-&#x20;       ├── index.html        # Entry HTML
+├── README.md
 
-&#x20;       └── vite.config.js    # Vite configuration
+└── .gitignore
+
+
+
+
+
+🐛 Troubleshooting
+
+
+
+CORS Error
+
+
+
+\- Update ALLOWED\_ORIGINS in backend configuration.
+
+\- Make sure the frontend URL is correctly configured.
+
+\- Confirm that the backend is running.
+
+\- Verify that the frontend is using the correct API URL.
+
+
+
+
+
+Report Won't Upload
+
+
+
+\- Check that the file format is supported.
+
+\- Verify the file size is within the allowed limit.
+
+\- Check the browser console for errors.
+
+\- Check the backend terminal for error messages.
+
+
+
+
+
+Report Won't Display
+
+
+
+\- Verify that the report was uploaded successfully.
+
+\- Check whether the report format is supported.
+
+\- Refresh the application.
+
+\- Check backend logs for processing errors.
+
+
+
+
+
+Analysis Not Working
+
+
+
+\- Make sure the backend is running.
+
+\- Verify the report was processed successfully.
+
+\- Check the API response in the browser developer tools.
+
+\- Check backend logs for errors.
+
+
+
+
+
+Performance Issues
+
+
+
+\- Reduce the size of uploaded reports.
+
+\- Optimize report processing.
+
+\- Remove unnecessary temporary files.
+
+\- Consider caching frequently accessed reports.
+
+\- Use production deployment settings.
 
 
 
@@ -292,9 +662,43 @@ Report\_Viewer/
 
 
 
-Contributions, issues, and feature requests are welcome!
+Contributions are welcome!
 
 
+
+Feel free to fork this repository, make improvements, and submit a pull request.
+
+
+
+Steps to Contribute:
+
+
+
+git clone https://github.com/your-username/Report-Viewer.git
+
+
+
+cd Report-Viewer
+
+
+
+git checkout -b feature/new-feature
+
+
+
+git add .
+
+
+
+git commit -m "Add new feature"
+
+
+
+git push origin feature/new-feature
+
+
+
+Then create a Pull Request.
 
 
 
@@ -304,9 +708,43 @@ Contributions, issues, and feature requests are welcome!
 
 
 
-MIT License - Use freely for personal and educational projects.
+MIT License - Use freely for personal and commercial projects.
 
 
+
+
+
+🎯 Future Enhancements
+
+
+
+\- Multiple report format support
+
+\- Advanced report search
+
+\- Report filtering and sorting
+
+\- Report annotations
+
+\- Report sharing with unique URLs
+
+\- User-based report management
+
+\- Cloud storage integration
+
+\- AI-powered report summarization
+
+\- Automatic report insights
+
+\- Report comparison
+
+\- Export analysis results
+
+\- Report visualization and charts
+
+\- Collaborative report viewing
+
+\- Advanced analytics dashboard
 
 
 
@@ -316,11 +754,15 @@ MIT License - Use freely for personal and educational projects.
 
 
 
-For issues or questions, feel free to open an issue in the repository.
+For issues, suggestions, or questions, create an issue in the repository.
 
 
 
-Made with ❤️ by \*\*Pranav Mule\*\* | Report Viewer v1.0.0
 
 
+\---
+
+
+
+Made with ❤️ by Pranav Mule | Report Viewer v1.0.0
 
